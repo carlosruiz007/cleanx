@@ -1,38 +1,33 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-import Hero from './components/Hero';
-import ServiceOfferings from './components/ServiceOfferings';
-import SocialProof from './components/SocialProof';
 import Footer from './components/Footer';
-import CleanxReplica from './pages/CleanxReplica';
+import Home from './pages/Home';
+import About from './pages/About';
+import Services from './pages/Services';
+import CleanxPage from './cleanx/CleanxPage';
 
 function App() {
-  const [hash, setHash] = React.useState(() => window.location.hash);
-
-  React.useEffect(() => {
-    const onHashChange = () => setHash(window.location.hash);
-    window.addEventListener('hashchange', onHashChange);
-    return () => window.removeEventListener('hashchange', onHashChange);
-  }, []);
-
-  const isReplica = hash === '#replica';
-
-  if (isReplica) {
-    return (
-      <div className="min-h-screen">
-        <CleanxReplica />
-      </div>
-    );
-  }
-
   return (
-    <div className="min-h-screen">
-      <Header />
-      <Hero />
-      <ServiceOfferings />
-      <SocialProof />
-      <Footer />
-    </div>
+    <Router>
+      <Routes>
+        {/* Cleanx React rebuild - now the home page */}
+        <Route path="/" element={<CleanxPage />} />
+        
+        {/* Regular pages with header/footer */}
+        <Route path="/*" element={
+          <div className="min-h-screen">
+            <Header />
+            <Routes>
+              <Route path="/old-home" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/services" element={<Services />} />
+            </Routes>
+            <Footer />
+          </div>
+        } />
+      </Routes>
+    </Router>
   );
 }
 

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,28 +11,25 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center">
             <img 
-              src="https://www.shutterstock.com/image-vector/vector-flat-taxi-logo-isolated-600nw-490850542.jpg" 
-              alt="Carlos Taxi Services" 
+              src="https://cdn-icons-png.flaticon.com/512/2917/2917995.png" 
+              alt="Carlos Clean Services" 
               className="h-10 w-auto"
             />
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#services" className="text-white hover:text-welcome-green-light transition-colors">
+            <Link to="/services" className="text-white hover:text-welcome-green-light transition-colors">
               Services
-            </a>
-            <a href="#about" className="text-white hover:text-welcome-green-light transition-colors">
+            </Link>
+            <Link to="/about" className="text-white hover:text-welcome-green-light transition-colors">
               About
-            </a>
-            <a href="#drivers" className="text-white hover:text-welcome-green-light transition-colors">
-              Our Team
-            </a>
+            </Link>
             <a href="#contact" className="text-white hover:text-welcome-green-light transition-colors">
               Contact
             </a>
             <a href="#book" className="bg-welcome-green text-white px-6 py-3 rounded-lg font-semibold hover:bg-welcome-green-light transition-colors">
-              Book a ride
+              Book a service
             </a>
           </nav>
 
@@ -52,20 +50,17 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-gray-200">
             <nav className="flex flex-col space-y-4">
-              <a href="#services" className="text-white hover:text-welcome-green-light transition-colors">
+              <Link to="/services" className="text-white hover:text-welcome-green-light transition-colors">
                 Services
-              </a>
-              <a href="#about" className="text-white hover:text-welcome-green-light transition-colors">
+              </Link>
+              <Link to="/about" className="text-white hover:text-welcome-green-light transition-colors">
                 About
-              </a>
-              <a href="#drivers" className="text-white hover:text-welcome-green-light transition-colors">
-                Our Team
-              </a>
+              </Link>
               <a href="#contact" className="text-white hover:text-welcome-green-light transition-colors">
                 Contact
               </a>
               <a href="#book" className="bg-welcome-green text-white px-6 py-3 rounded-lg font-semibold hover:bg-welcome-green-light transition-colors inline-block text-center">
-                Book a ride
+                Book a service
               </a>
             </nav>
           </div>

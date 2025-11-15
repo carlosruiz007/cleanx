@@ -10,12 +10,12 @@ const SocialProof = () => {
 
   const testimonials = [
     {
-      text: "Excellent service! The driver was punctual, professional, and very helpful. Made our airport transfer seamless and stress-free.",
+      text: "Excellent service! The cleaning team was punctual, professional, and very thorough. They left my home spotless and sparkling. Highly recommended!",
       author: "Sarah M.",
       rating: 5
     },
     {
-      text: "Outstanding experience from start to finish. The driver was knowledgeable about the city and provided great local insights during our sightseeing tour.",
+      text: "Outstanding experience from start to finish. The team was meticulous with every detail and used eco-friendly products. My office has never looked better!",
       author: "Michael R.",
       rating: 5
     }
@@ -27,7 +27,7 @@ const SocialProof = () => {
         {/* Main heading */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-welcome-blue mb-6">
-            2,500,000+ happy riders every year
+            2,500+ satisfied customers every year
           </h2>
         </div>
 

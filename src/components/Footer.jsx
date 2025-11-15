@@ -7,13 +7,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-2xl font-bold mb-6">Carlos Taxi Services</h3>
+            <h3 className="text-2xl font-bold mb-6">Carlos Clean Services</h3>
             <p className="text-gray-300 mb-4">
-              Professional transportation services with 24/7 availability. 
-              Safe, reliable, and comfortable rides for all your travel needs.
+              Professional cleaning services with 24/7 availability. 
+              Reliable, thorough, and eco-friendly cleaning for homes and offices.
             </p>
             <button className="bg-welcome-green text-white px-6 py-3 rounded-lg font-semibold hover:bg-welcome-green-light transition-colors">
-              Book a ride
+              Book a service
             </button>
           </div>
 
@@ -21,10 +21,10 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-6">Our Services</h4>
             <ul className="space-y-3">
-              <li><a href="#airport-transfers" className="text-gray-300 hover:text-white transition-colors">Airport Transfers</a></li>
-              <li><a href="#sightseeing" className="text-gray-300 hover:text-white transition-colors">Sightseeing Rides</a></li>
-              <li><a href="#city-rides" className="text-gray-300 hover:text-white transition-colors">In-city Rides</a></li>
-              <li><a href="#hourly-rentals" className="text-gray-300 hover:text-white transition-colors">Hourly Rentals</a></li>
+              <li><a href="#house-cleaning" className="text-gray-300 hover:text-white transition-colors">House Cleaning</a></li>
+              <li><a href="#office-cleaning" className="text-gray-300 hover:text-white transition-colors">Office Cleaning</a></li>
+              <li><a href="#deep-cleaning" className="text-gray-300 hover:text-white transition-colors">Deep Cleaning</a></li>
+              <li><a href="#move-inout" className="text-gray-300 hover:text-white transition-colors">Move In/Out Cleaning</a></li>
             </ul>
           </div>
 
@@ -42,7 +42,7 @@ const Footer = () => {
                 <svg className="w-5 h-5 mr-3 text-welcome-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <span className="text-gray-300">info@carlostaxi.com</span>
+                <span className="text-gray-300">info@carlosclean.com</span>
               </div>
               <div className="flex items-center">
                 <svg className="w-5 h-5 mr-3 text-welcome-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -56,7 +56,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between text-gray-400 text-sm">
-          <p className="mb-4 md:mb-0">© 2024 Carlos Taxi Services. All rights reserved.</p>
+          <p className="mb-4 md:mb-0">© 2024 Carlos Clean Services. All rights reserved.</p>
           <div className="flex space-x-6">
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Facebook</a>
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a>

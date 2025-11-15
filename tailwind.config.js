@@ -6,7 +6,22 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        // Vendor breakpoints
+        'bp-md': '768px',     // 768–991.98
+        'bp-lg': '992px',     // 992–1439.98
+        'bp-xl': '1440px',    // ≥1440
+      },
       colors: {
+        // Vendor tokens
+        cleanx: {
+          white: '#ffffff',
+          bg: '#f6f7f9',
+          text: '#3b3b3b',
+          navy: '#010528',
+          primary: '#5869fc',
+          accent: '#fae084',
+        },
         primary: {
           50: '#f0f9ff',
           100: '#e0f2fe',
@@ -41,6 +56,7 @@ export default {
         }
       },
       fontFamily: {
+        heading: ['"Wix Madefor Display"', 'Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
         sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
       },
       spacing: {

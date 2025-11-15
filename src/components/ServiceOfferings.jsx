@@ -3,22 +3,22 @@ import React from 'react';
 const ServiceOfferings = () => {
   const services = [
     {
-      title: "Airport and port transfers",
-      description: "Peace of mind upon arrival. Our professional drivers will be waiting for you at the airport or port, ready to take you to your destination safely and comfortably.",
-      image: "https://images.unsplash.com/photo-1556388158-158ea5ccacbd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      link: "#airport-transfers"
+      title: "House Cleaning",
+      description: "Comprehensive residential cleaning for homes of all sizes. Our professional team ensures every corner of your home is spotless, using eco-friendly products for your family's safety.",
+      image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      link: "#house-cleaning"
     },
     {
-      title: "Sightseeing rides",
-      description: "Get the most out of your trip to your favorite sights. Our knowledgeable drivers will take you to the best attractions and provide local insights along the way.",
-      image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      link: "#sightseeing"
+      title: "Office Cleaning",
+      description: "Professional office cleaning services that create a healthy and productive work environment. We handle everything from desks to conference rooms, ensuring your workplace shines.",
+      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      link: "#office-cleaning"
     },
     {
-      title: "In-city rides",
-      description: "Safe and timely transportation within the city. Whether you need a quick ride to a meeting or a comfortable journey across town, we've got you covered.",
-      image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      link: "#city-rides"
+      title: "Deep Cleaning",
+      description: "Thorough deep cleaning services for those times when your space needs extra attention. Perfect for seasonal cleaning, special events, or just a fresh start.",
+      image: "https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      link: "#deep-cleaning"
     }
   ];
 
