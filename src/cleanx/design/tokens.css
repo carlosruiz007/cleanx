@@ -1,0 +1,59 @@
+:root{
+  --cleanx-white:#ffffff;
+  --cleanx-bg:#f6f7f9;
+  --cleanx-text:#3b3b3b;
+  --cleanx-navy:#010528;
+  --cleanx-primary:#5869fc;
+  --cleanx-accent:#fae084;
+  --cleanx-font-heading:"Wix Madefor Display", Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --cleanx-font-sans:Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+@font-face{
+  font-family:"Inter";
+  src:url("/vendor/cleanx/app.framerstatic.com/Inter-Regular.latin-JLQMKCHE.woff2") format("woff2");
+  font-style:normal;
+  font-weight:400;
+  font-display:swap;
+}
+@font-face{
+  font-family:"Inter";
+  src:url("/vendor/cleanx/app.framerstatic.com/Inter-Bold.latin-UCM45LQF.woff2") format("woff2");
+  font-style:normal;
+  font-weight:700;
+  font-display:swap;
+}
+
+body{
+  background:var(--cleanx-white);
+}
+
+/* Wix Madefor Display (local copies) */
+@font-face{
+  font-family:"Wix Madefor Display";
+  src:url('/vendor/cleanx/fonts.gstatic.com/s/wixmadefordisplay/v12/SZcl3EX9IbbyeJ8aOluD52KXgUA_7Ed1CVHuAg-400-latin.woff2') format('woff2');
+  font-style:normal;
+  font-weight:400;
+  font-display:swap;
+}
+@font-face{
+  font-family:"Wix Madefor Display";
+  src:url('/vendor/cleanx/fonts.gstatic.com/s/wixmadefordisplay/v12/SZcl3EX9IbbyeJ8aOluD52KXgUA_7Ed1CVHuAg-500-latin.woff2') format('woff2');
+  font-style:normal;
+  font-weight:500;
+  font-display:swap;
+}
+@font-face{
+  font-family:"Wix Madefor Display";
+  src:url('/vendor/cleanx/fonts.gstatic.com/s/wixmadefordisplay/v12/SZcl3EX9IbbyeJ8aOluD52KXgUA_7Ed1CVHuAg-600-latin.woff2') format('woff2');
+  font-style:normal;
+  font-weight:600;
+  font-display:swap;
+}
+@font-face{
+  font-family:"Wix Madefor Display";
+  src:url('/vendor/cleanx/fonts.gstatic.com/s/wixmadefordisplay/v12/SZcl3EX9IbbyeJ8aOluD52KXgUA_7Ed1CVHuAg-700-latin.woff2') format('woff2');
+  font-style:normal;
+  font-weight:700;
+  font-display:swap;
+}

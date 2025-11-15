@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const Hero = () => {
   const [formData, setFormData] = useState({
-    service: 'Airport Transfer',
+    service: 'House Cleaning',
     from: '',
     to: '',
     date: '',
@@ -39,10 +39,10 @@ const Hero = () => {
             {/* Left side - Text content */}
             <div className="text-white">
               <h1 className="text-6xl md:text-7xl font-bold mb-6 leading-tight">
-                Arrive. Discover. Experience.
+                Clean. Fresh. Pristine.
               </h1>
               <p className="text-2xl text-gray-200 mb-8 max-w-2xl">
-                Personalized transportation designed for travel.
+                Professional cleaning services for your home and office.
               </p>
             </div>
 
@@ -60,10 +60,10 @@ const Hero = () => {
                     onChange={handleChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-welcome-green focus:border-transparent transition-all duration-200"
                   >
-                    <option value="Airport Transfer">Airport Transfer</option>
-                    <option value="City Ride">City Ride</option>
-                    <option value="Sightseeing">Sightseeing</option>
-                    <option value="Hourly Rental">Hourly Rental</option>
+                    <option value="House Cleaning">House Cleaning</option>
+                    <option value="Office Cleaning">Office Cleaning</option>
+                    <option value="Deep Cleaning">Deep Cleaning</option>
+                    <option value="Move In/Out">Move In/Out Cleaning</option>
                   </select>
                 </div>
 
@@ -71,7 +71,7 @@ const Hero = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-3">
-                      From (e.g., airport, address)
+                      Property Address
                     </label>
                     <input
                       type="text"
@@ -80,13 +80,13 @@ const Hero = () => {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-welcome-green focus:border-transparent transition-all duration-200"
-                      placeholder="Enter pickup location"
+                      placeholder="Enter property address"
                     />
                   </div>
                   
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-3">
-                      To (e.g., airport, address)
+                      City / Zip Code
                     </label>
                     <input
                       type="text"
@@ -95,7 +95,7 @@ const Hero = () => {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-welcome-green focus:border-transparent transition-all duration-200"
-                      placeholder="Enter destination"
+                      placeholder="Enter city or zip code"
                     />
                   </div>
                 </div>
@@ -104,7 +104,7 @@ const Hero = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-3">
-                      Pickup Date
+                      Service Date
                     </label>
                     <input
                       type="date"
@@ -118,7 +118,7 @@ const Hero = () => {
                   
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-3">
-                      Pickup Time
+                      Preferred Time
                     </label>
                     <input
                       type="time"
@@ -135,7 +135,7 @@ const Hero = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-3">
-                      Passengers
+                      Bedrooms
                     </label>
                     <div className="flex items-center border border-gray-300 rounded-lg">
                       <button
@@ -158,7 +158,7 @@ const Hero = () => {
                   
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-3">
-                      Luggage
+                      Bathrooms
                     </label>
                     <div className="flex items-center border border-gray-300 rounded-lg">
                       <button
@@ -188,7 +188,7 @@ const Hero = () => {
                 </button>
 
                 <p className="text-center text-sm text-gray-500">
-                  250+ cities | 150+ airports worldwide
+                  Serving homes and offices across the Bay Area
                 </p>
               </form>
             </div>
