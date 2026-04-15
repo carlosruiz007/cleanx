@@ -16,7 +16,7 @@ function Standards() {
   ];
 
   return (
-    <Section className="py-20" style={{ backgroundColor: 'var(--cleanx-accent)' }}>
+    <Section id="about" className="scroll-mt-24 py-20" style={{ backgroundColor: 'var(--cleanx-accent)' }}>
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left: Content */}

@@ -1,11 +1,12 @@
 import React from 'react';
 
-function Heading({ as: As = 'h1', children, weight = '700', className = '', style = {}, ...props }) {
+function Heading({ as = 'h1', children, weight = '700', className = '', style = {}, ...props }) {
+  const Comp = as;
   const cls = `font-heading text-[var(--cleanx-navy)] ${className}`;
   return (
-    <As className={cls} style={{ fontWeight: Number(weight), ...style }} {...props}>
+    <Comp className={cls} style={{ fontWeight: Number(weight), ...style }} {...props}>
       {children}
-    </As>
+    </Comp>
   );
 }
 
