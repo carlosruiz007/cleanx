@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Container from '../design/primitives/Container';
 import Section from '../design/primitives/Section';
 import Heading from '../design/primitives/Heading';
@@ -12,6 +12,7 @@ function Hero() {
     'No Rescheduling Fees',
     'No Contracts'
   ];
+  const [status, setStatus] = useState({ state: 'idle', message: '' });
 
   return (
     <Section
@@ -56,8 +57,40 @@ function Hero() {
               </Heading>
               <form
                 className="space-y-4"
-                onSubmit={(e) => {
+                onSubmit={async (e) => {
                   e.preventDefault();
+                  setStatus({ state: 'loading', message: '' });
+
+                  const form = e.currentTarget;
+                  const data = Object.fromEntries(new FormData(form).entries());
+
+                  try {
+                    const resp = await fetch('/api/book-appointment', {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify(data),
+                    });
+                    const body = await resp.json().catch(() => ({}));
+
+                    if (!resp.ok || !body?.ok) {
+                      setStatus({
+                        state: 'error',
+                        message: body?.error || 'Something went wrong. Please try again.',
+                      });
+                      return;
+                    }
+
+                    setStatus({
+                      state: 'success',
+                      message: 'Thanks — we received your request and will reach out shortly.',
+                    });
+                    form.reset();
+                  } catch {
+                    setStatus({
+                      state: 'error',
+                      message: 'Network error. Please try again in a moment.',
+                    });
+                  }
                 }}
               >
                 <div>
@@ -148,9 +181,30 @@ function Hero() {
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[var(--cleanx-primary)] focus:outline-none transition-colors"
                   />
                 </div>
-                <Button type="submit" variant="primary" size="md" className="w-full rounded-xl mt-4">
+                <Button
+                  type="submit"
+                  variant="primary"
+                  size="md"
+                  className="w-full rounded-xl mt-4 disabled:opacity-60"
+                  disabled={status.state === 'loading'}
+                >
                   Book Free Appointment
                 </Button>
+                {status.state !== 'idle' && (
+                  <Text
+                    className="text-sm text-center mt-3"
+                    style={{
+                      color:
+                        status.state === 'success'
+                          ? 'rgb(22 163 74)'
+                          : status.state === 'error'
+                            ? 'rgb(220 38 38)'
+                            : 'var(--cleanx-text)',
+                    }}
+                  >
+                    {status.state === 'loading' ? 'Sending…' : status.message}
+                  </Text>
+                )}
                 <Text className="text-xs text-center opacity-60 mt-2">
                   34 cleans booked in the last 24 hours
                 </Text>
