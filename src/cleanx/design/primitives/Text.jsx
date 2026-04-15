@@ -1,11 +1,12 @@
 import React from 'react';
 
-function Text({ as: As = 'p', children, className = '', style = {}, ...props }) {
+function Text({ as = 'p', children, className = '', style = {}, ...props }) {
+  const Comp = as;
   const cls = `font-sans text-[var(--cleanx-text)] ${className}`;
   return (
-    <As className={cls} style={style} {...props}>
+    <Comp className={cls} style={style} {...props}>
       {children}
-    </As>
+    </Comp>
   );
 }
 

@@ -6,6 +6,7 @@ import Services from './sections/Services';
 import Testimonial from './sections/Testimonial';
 import Steps from './sections/Steps';
 import Standards from './sections/Standards';
+import Faq from './sections/Faq';
 import Footer from './sections/Footer';
 
 function CleanxPage() {
@@ -18,6 +19,7 @@ function CleanxPage() {
       <Testimonial />
       <Steps />
       <Standards />
+      <Faq />
       <Footer />
     </div>
   );

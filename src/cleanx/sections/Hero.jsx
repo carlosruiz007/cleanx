@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Container from '../design/primitives/Container';
 import Section from '../design/primitives/Section';
 import Heading from '../design/primitives/Heading';
@@ -12,9 +12,13 @@ function Hero() {
     'No Rescheduling Fees',
     'No Contracts'
   ];
+  const [status, setStatus] = useState({ state: 'idle', message: '' });
 
   return (
-    <Section className="bg-[var(--cleanx-bg)] pt-16 md:pt-20 pb-0 relative overflow-hidden min-h-[900px]">
+    <Section
+      id="home"
+      className="scroll-mt-24 bg-[var(--cleanx-bg)] pt-16 md:pt-20 pb-0 relative overflow-hidden min-h-[min(100dvh,900px)] md:min-h-[900px]"
+    >
       {/* Background hero image - positioned to start below text, behind form */}
       <div 
         className="absolute left-0 right-0 bottom-0 h-[360px] md:h-[410px] bg-cover bg-center"
@@ -51,31 +55,96 @@ function Hero() {
               <Heading as="h3" weight="600" className="text-xl mb-6">
                 Book A Free Appointment
               </Heading>
-              <form className="space-y-4">
+              <form
+                className="space-y-4"
+                onSubmit={async (e) => {
+                  e.preventDefault();
+                  setStatus({ state: 'loading', message: '' });
+
+                  const form = e.currentTarget;
+                  const data = Object.fromEntries(new FormData(form).entries());
+
+                  try {
+                    const resp = await fetch('/api/book-appointment', {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify(data),
+                    });
+                    const body = await resp.json().catch(() => ({}));
+
+                    if (!resp.ok || !body?.ok) {
+                      setStatus({
+                        state: 'error',
+                        message: body?.error || 'Something went wrong. Please try again.',
+                      });
+                      return;
+                    }
+
+                    setStatus({
+                      state: 'success',
+                      message: 'Thanks — we received your request and will reach out shortly.',
+                    });
+                    form.reset();
+                  } catch {
+                    setStatus({
+                      state: 'error',
+                      message: 'Network error. Please try again in a moment.',
+                    });
+                  }
+                }}
+              >
                 <div>
-                  <input 
+                  <label htmlFor="booking-full-name" className="mb-1 block text-sm font-medium text-gray-700">
+                    Full name
+                  </label>
+                  <input
+                    id="booking-full-name"
+                    name="fullName"
                     type="text"
+                    autoComplete="name"
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[var(--cleanx-primary)] focus:outline-none transition-colors"
-                    placeholder="Full Name"
+                    placeholder="Jane Doe"
                   />
                 </div>
                 <div>
-                  <input 
+                  <label htmlFor="booking-email" className="mb-1 block text-sm font-medium text-gray-700">
+                    Email
+                  </label>
+                  <input
+                    id="booking-email"
+                    name="email"
                     type="email"
+                    autoComplete="email"
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[var(--cleanx-primary)] focus:outline-none transition-colors"
-                    placeholder="Email address"
+                    placeholder="you@example.com"
                   />
                 </div>
                 <div>
-                  <input 
+                  <label htmlFor="booking-phone" className="mb-1 block text-sm font-medium text-gray-700">
+                    Phone
+                  </label>
+                  <input
+                    id="booking-phone"
+                    name="phone"
                     type="tel"
+                    autoComplete="tel"
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[var(--cleanx-primary)] focus:outline-none transition-colors"
-                    placeholder="Phone number"
+                    placeholder="(415) 555-0132"
                   />
                 </div>
                 <div>
-                  <select className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[var(--cleanx-primary)] focus:outline-none transition-colors bg-white">
-                    <option>Frequency</option>
+                  <label htmlFor="booking-frequency" className="mb-1 block text-sm font-medium text-gray-700">
+                    Frequency
+                  </label>
+                  <select
+                    id="booking-frequency"
+                    name="frequency"
+                    defaultValue=""
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[var(--cleanx-primary)] focus:outline-none transition-colors bg-white"
+                  >
+                    <option value="" disabled>
+                      Select frequency
+                    </option>
                     <option>One-time</option>
                     <option>Weekly</option>
                     <option>Bi-weekly</option>
@@ -83,8 +152,18 @@ function Hero() {
                   </select>
                 </div>
                 <div>
-                  <select className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[var(--cleanx-primary)] focus:outline-none transition-colors bg-white">
-                    <option>Select Services</option>
+                  <label htmlFor="booking-service" className="mb-1 block text-sm font-medium text-gray-700">
+                    Service
+                  </label>
+                  <select
+                    id="booking-service"
+                    name="service"
+                    defaultValue=""
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[var(--cleanx-primary)] focus:outline-none transition-colors bg-white"
+                  >
+                    <option value="" disabled>
+                      Select services
+                    </option>
                     <option>House Cleaning</option>
                     <option>Office Cleaning</option>
                     <option>Deep Cleaning</option>
@@ -92,15 +171,40 @@ function Hero() {
                   </select>
                 </div>
                 <div>
-                  <input 
+                  <label htmlFor="booking-date" className="mb-1 block text-sm font-medium text-gray-700">
+                    Preferred date
+                  </label>
+                  <input
+                    id="booking-date"
+                    name="date"
                     type="date"
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[var(--cleanx-primary)] focus:outline-none transition-colors"
-                    placeholder="mm/dd/yyyy"
                   />
                 </div>
-                <Button variant="primary" size="md" className="w-full rounded-xl mt-4">
+                <Button
+                  type="submit"
+                  variant="primary"
+                  size="md"
+                  className="w-full rounded-xl mt-4 disabled:opacity-60"
+                  disabled={status.state === 'loading'}
+                >
                   Book Free Appointment
                 </Button>
+                {status.state !== 'idle' && (
+                  <Text
+                    className="text-sm text-center mt-3"
+                    style={{
+                      color:
+                        status.state === 'success'
+                          ? 'rgb(22 163 74)'
+                          : status.state === 'error'
+                            ? 'rgb(220 38 38)'
+                            : 'var(--cleanx-text)',
+                    }}
+                  >
+                    {status.state === 'loading' ? 'Sending…' : status.message}
+                  </Text>
+                )}
                 <Text className="text-xs text-center opacity-60 mt-2">
                   34 cleans booked in the last 24 hours
                 </Text>

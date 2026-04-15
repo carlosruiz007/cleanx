@@ -91,7 +91,11 @@ function Services() {
   ];
 
   return (
-    <Section className="py-20 relative bg-cover bg-center" style={{ backgroundImage: 'url(/images/feature-background.avif)' }}>
+    <Section
+      id="services"
+      className="scroll-mt-24 py-20 relative bg-cover bg-center"
+      style={{ backgroundImage: 'url(/images/feature-background.avif)' }}
+    >
       <Container className="relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -148,8 +152,8 @@ function Services() {
           ))}
         </div>
 
-        {/* CTA */}
-        <div className="text-center">
+        {/* CTA — in-page anchor for pricing / booking */}
+        <div id="pricing" className="scroll-mt-24 text-center">
           <Button variant="primary" size="md" className="rounded-xl px-8">
             Book A Free Appointment
           </Button>

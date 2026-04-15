@@ -8,81 +8,87 @@ function Footer() {
     { label: 'Services', href: '#services' },
     { label: 'FAQ', href: '#faq' },
     { label: 'Contact', href: '#contact' },
-    { label: 'Pricing', href: '#pricing' }
+    { label: 'Pricing', href: '#pricing' },
   ];
 
   const socialLinks = [
-    { 
-      name: 'Twitter', 
+    {
+      name: 'Twitter',
       icon: (
-        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
         </svg>
       ),
-      href: '#'
+      href: '#contact',
+      title: 'Contact us for social links',
     },
-    { 
-      name: 'LinkedIn', 
+    {
+      name: 'LinkedIn',
       icon: (
-        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
         </svg>
       ),
-      href: '#'
+      href: '#contact',
+      title: 'Contact us for social links',
     },
-    { 
-      name: 'Facebook', 
+    {
+      name: 'Facebook',
       icon: (
-        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
+          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
         </svg>
       ),
-      href: '#'
-    }
+      href: '#contact',
+      title: 'Contact us for social links',
+    },
   ];
 
+  const border = 'rgba(255, 255, 255, 0.1)';
+
   return (
-    <Section 
-      className="py-8 border-t"
-      style={{ 
+    <Section
+      id="contact"
+      className="scroll-mt-24 py-8 border-t"
+      style={{
         backgroundColor: '#0A1628',
-        borderColor: 'rgba(255, 255, 255, 0.1)'
+        borderColor: border,
       }}
     >
       <Container>
-        {/* Top row: Logo, Nav, Social */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-8">
-          {/* Logo */}
-          <div className="flex items-center gap-2">
+          <a href="#home" className="flex items-center gap-2 shrink-0 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70">
             <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center">
-              <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             </div>
             <span className="text-xl font-semibold text-white">CleanX</span>
-          </div>
+          </a>
 
-          {/* Navigation */}
-          <nav className="flex items-center gap-8">
+          <nav
+            className="flex flex-wrap justify-center gap-x-5 gap-y-2 md:gap-8 max-w-full"
+            aria-label="Footer"
+          >
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="text-sm text-gray-300 hover:text-white transition-colors"
+                className="text-sm text-gray-300 hover:text-white transition-colors whitespace-nowrap"
               >
                 {link.label}
               </a>
             ))}
           </nav>
 
-          {/* Social Icons */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 shrink-0">
             {socialLinks.map((social) => (
               <a
                 key={social.name}
                 href={social.href}
+                title={social.title}
                 className="text-gray-300 hover:text-white transition-colors"
-                aria-label={social.name}
+                aria-label={`${social.name} (contact CleanX)`}
               >
                 {social.icon}
               </a>
@@ -90,18 +96,44 @@ function Footer() {
           </div>
         </div>
 
-        {/* Bottom row: Copyright and Legal */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-6 border-t" style={{ borderColor: 'rgba(255, 255, 255, 0.1)' }}>
-          <p className="text-sm text-gray-400">
-            © 2024 FramerBite. All rights reserved.
+        <div
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t text-sm text-gray-400"
+          style={{ borderColor: border }}
+        >
+          <div id="privacy" className="scroll-mt-24">
+            <h2 className="text-white font-semibold mb-2 text-base">Privacy Policy</h2>
+            <p className="leading-relaxed">
+              We collect information you provide when booking or contacting us (such as name, phone, email, and
+              service address) to schedule cleanings and communicate about your appointments. We do not sell your
+              personal information. Replace this summary with counsel-approved language before production use.
+            </p>
+          </div>
+          <div id="terms" className="scroll-mt-24">
+            <h2 className="text-white font-semibold mb-2 text-base">Terms &amp; Conditions</h2>
+            <p className="leading-relaxed">
+              By using this site you agree to our booking, cancellation, and payment policies as described at checkout
+              and in your service agreement. Liability limits and dispute terms should be finalized with your legal
+              advisor. This placeholder is not legal advice.
+            </p>
+          </div>
+        </div>
+
+        <div
+          className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t"
+          style={{ borderColor: border }}
+        >
+          <p className="text-sm text-gray-400 text-center md:text-left">
+            © {new Date().getFullYear()} CleanX. All rights reserved.
           </p>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
             <a href="#privacy" className="text-sm text-gray-400 hover:text-white transition-colors">
               Privacy Policy
             </a>
-            <span className="text-gray-600">|</span>
+            <span className="text-gray-600 hidden sm:inline" aria-hidden>
+              |
+            </span>
             <a href="#terms" className="text-sm text-gray-400 hover:text-white transition-colors">
-              Terms & Conditions
+              Terms &amp; Conditions
             </a>
           </div>
         </div>
