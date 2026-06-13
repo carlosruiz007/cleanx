@@ -7,6 +7,15 @@
     <title>CleanX — Professional House &amp; Office Cleaning</title>
   </head>
   <body>
+    <!-- Static form for Netlify Forms detection at deploy time -->
+    <form name="booking" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="fullName" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <input type="text" name="frequency" />
+      <input type="text" name="service" />
+      <input type="text" name="date" />
+    </form>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

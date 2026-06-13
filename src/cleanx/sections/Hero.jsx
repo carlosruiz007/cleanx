@@ -56,26 +56,37 @@ function Hero() {
                 Book A Free Appointment
               </Heading>
               <form
+                name="booking"
+                method="POST"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
                 className="space-y-4"
                 onSubmit={async (e) => {
                   e.preventDefault();
                   setStatus({ state: 'loading', message: '' });
 
                   const form = e.currentTarget;
-                  const data = Object.fromEntries(new FormData(form).entries());
+                  const formData = new FormData(form);
+
+                  if (!formData.get('email') && !formData.get('phone')) {
+                    setStatus({
+                      state: 'error',
+                      message: 'Please provide an email or phone number.',
+                    });
+                    return;
+                  }
 
                   try {
-                    const resp = await fetch('/api/book-appointment', {
+                    const resp = await fetch('/', {
                       method: 'POST',
-                      headers: { 'Content-Type': 'application/json' },
-                      body: JSON.stringify(data),
+                      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                      body: new URLSearchParams(formData).toString(),
                     });
-                    const body = await resp.json().catch(() => ({}));
 
-                    if (!resp.ok || !body?.ok) {
+                    if (!resp.ok) {
                       setStatus({
                         state: 'error',
-                        message: body?.error || 'Something went wrong. Please try again.',
+                        message: 'Something went wrong. Please try again.',
                       });
                       return;
                     }
@@ -93,6 +104,13 @@ function Hero() {
                   }
                 }}
               >
+                <input type="hidden" name="form-name" value="booking" />
+                <p className="hidden" aria-hidden="true">
+                  <label>
+                    Don&apos;t fill this out:
+                    <input name="bot-field" tabIndex={-1} autoComplete="off" />
+                  </label>
+                </p>
                 <div>
                   <label htmlFor="booking-full-name" className="mb-1 block text-sm font-medium text-gray-700">
                     Full name
