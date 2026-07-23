@@ -57,6 +57,7 @@ function Hero() {
               </Heading>
               <form
                 name="booking"
+                action="/"
                 method="POST"
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
